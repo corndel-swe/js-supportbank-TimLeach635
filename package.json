@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Supportive Bank",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "doc": "docs",
     "test": "tests"
@@ -30,5 +31,10 @@
   "homepage": "https://github.com/corndel-swe/js-supportbank-TimLeach635#readme",
   "devDependencies": {
     "mocha": "^10.6.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "fetch": "^1.1.0"
   }
 }

@@ -6,7 +6,9 @@ transactionController
   .command('log <from> <to> <amount>')
   .description('Log transaction data to the console')
   .action((from, to, amount) => {
-    // TODO
+    const now = new Date()
+
+    console.log(`At ${now.toDateString()}, ${from} sent ${to} £${amount}`)
   })
 
 export default transactionController
