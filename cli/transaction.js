@@ -15,6 +15,27 @@ transactionController
     console.log(`At ${now.toDateString()}, ${from} sent ${to} £${amount}`)
   })
 
+class Transaction {
+  constructor(date, from, to, narrative, amount) {
+    this.date = date
+    this.from = from
+    this.to = to
+    this.narrative = narrative
+    this.amount = amount
+  }
+}
+
+function readTransactionFromLine(line) {
+  const lineSplit = line.split(",")
+  return new Transaction(
+    lineSplit[0],
+    lineSplit[1],
+    lineSplit[2],
+    lineSplit[3],
+    parseFloat(lineSplit[4])
+  )
+}
+
 transactionController
   .command("summarise all")
   .description("Summarise all the transactions")
@@ -23,21 +44,18 @@ transactionController
     const names = {}
 
     for (let line of allButFirstLine) {
-      const lineSplit = line.split(",")
-      const fromName = lineSplit[1]
-      const toName = lineSplit[2]
-      const amount = parseFloat(lineSplit[4])
+      const transaction = readTransactionFromLine(line)
 
-      if (fromName in names) {
-        names[fromName] -= amount
+      if (transaction.from in names) {
+        names[transaction.from] -= transaction.amount
       } else {
-        names[fromName] = -amount
+        names[transaction.from] = -transaction.amount
       }
 
-      if (toName in names) {
-        names[toName] += amount
+      if (transaction.to in names) {
+        names[transaction.to] += transaction.amount
       } else {
-        names[toName] = amount
+        names[transaction.to] = transaction.amount
       }
     }
 
