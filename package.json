@@ -1,0 +1,34 @@
+{
+  "name": "support-bank",
+  "version": "1.0.0",
+  "description": "A Supportive Bank",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test:d1e1": "mocha ./tests/exercises/day-1-exercise-1.test.mjs",
+    "test:d1e2": "mocha ./tests/exercises/day-1-exercise-2.test.js",
+    "test:d1e3": "mocha ./tests/exercises/day-1-exercise-3.test.js",
+    "test:d2e1": "mocha ./tests/exercises/day-2-exercise-1.test.js",
+    "test:d2e2": "mocha ./tests/exercises/day-2-exercise-2.test.js",
+    "test:d2e3": "mocha ./tests/exercises/day-2-exercise-3.test.js",
+    "test:d3e1": "mocha ./tests/exercises/day-3-exercise-1.test.js",
+    "test:d3e2": "mocha ./tests/exercises/day-3-exercise-2.test.js",
+    "test:d3e3": "mocha ./tests/exercises/day-3-exercise-3.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corndel-swe/js-supportbank-TimLeach635.git"
+  },
+  "author": "Tim Leach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corndel-swe/js-supportbank-TimLeach635/issues"
+  },
+  "homepage": "https://github.com/corndel-swe/js-supportbank-TimLeach635#readme",
+  "devDependencies": {
+    "mocha": "^10.6.0"
+  }
+}
